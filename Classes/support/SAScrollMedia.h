@@ -3,7 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
-//  Modified for ZBCool app by Passerbied on 11/05/2014.
+//  Modified by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
