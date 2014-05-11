@@ -39,39 +39,41 @@
 
     if (!cell) {
         cell = [[SAScrollTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-
     }
 
     /**
      *  set cell delegate to get events of selected media
      */
     cell.delegate = self;
-
+    
+    /**
+     *  set cell tag to help get the position of selected media
+     */
+    cell.tag = indexPath.row;
+    
     /**
      *  returned a array of SAMediaObject objects that holds all information about a media file.
      */
-    [cell setMedia:@[
-                     [SAScrollMedia mediaWithType:SAScrollMediaTypeVideoAsset
-                                           object:[[NSBundle mainBundle] URLForResource:@"sample1" withExtension:@"mov"]],
-                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
-                                            title:@"Title"
-                                           object:@"sample1.jpg"],
-                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageName
-                                            title:@"Title"
-                                           object:@"sample2.jpg"],
-                     [SAScrollMedia mediaWithType:SAScrollMediaTypeImageObject
-                                            title:@"Title"
-                                           object:[UIImage imageNamed:@"sample3.jpg"]]
-                     ]
-     ];
-
+    [cell setMedia:[self imageData]];
     return cell;
+}
+
+- (NSArray *)imageData
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    for (int i = 0; i < 4; i++) {
+        
+        [arr addObject:[SAScrollMedia mediaWithType:SAScrollMediaTypeImageURL
+                                             object:[NSURL URLWithString:@"http://yueban.com/public/defavatar/boy75.png"]]];
+    }
+    
+    return arr;
 }
 
 
 #pragma mark - SAScrollTableViewCellDelegate
 - (void)scrollTableViewCell:(SAScrollTableViewCell *)scrollTableViewCell didSelectMediaAtIndexPath:(NSIndexPath *)indexPath atRow:(NSInteger)row {
-    NSLog(@"cell media: %@, %@", indexPath, @(row));
+    NSLog(@"cell media: %d, %d", (int)indexPath.row, (int)row);
 
 }
 

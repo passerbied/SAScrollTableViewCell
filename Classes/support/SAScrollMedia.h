@@ -3,6 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
+//  Modified for ZBCool app by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
@@ -28,6 +29,10 @@ typedef NS_ENUM(NSUInteger, SAScrollMediaType) {
      *  NSURL of a link to a ivdeo file supported by iOS
      */
     SAScrollMediaTypeVideoAsset,
+    /**
+     *  NSURL of a link to a image file supported by iOS
+     */
+    SAScrollMediaTypeImageURL,
     /**
      *  for subclassing
      */

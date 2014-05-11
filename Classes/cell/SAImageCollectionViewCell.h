@@ -18,6 +18,13 @@
 - (void)setImage:(UIImage *)image;
 
 /**
+ *  set url for imageview
+ *
+ *  @param image url
+ */
+- (void)setImageWithURL:(NSURL *)url;
+
+/**
  *  add title to image
  *
  *  @param title title string

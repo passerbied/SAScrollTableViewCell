@@ -7,6 +7,7 @@
 //
 
 #import "SAImageCollectionViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface SAImageCollectionViewCell ()
 
@@ -49,6 +50,10 @@
 - (void)setImage:(UIImage *)image {
     self.imageView.image = image;
 
+}
+
+- (void)setImageWithURL:(NSURL *)url {
+    [self.imageView setImageWithURL:url placeholderImage:nil];
 }
 
 - (void)setTitleTextColor:(UIColor *)textColor withBackgroundColor:(UIColor *)bgColor {

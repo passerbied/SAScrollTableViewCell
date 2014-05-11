@@ -3,6 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
+//  Modified for by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
@@ -111,6 +112,7 @@
             [cell setImage:[UIImage imageWithData:mediaObject.object]];
 
             break;
+            
         case SAScrollMediaTypeVideoAsset: {
             SAMediaCollectionViewCell *mediaCell = (SAMediaCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellMediaIdentify forIndexPath:indexPath];
 
@@ -122,6 +124,13 @@
 
             return mediaCell;
         }
+        case SAScrollMediaTypeImageURL: {
+            [cell setTitleTextColor:self.textColor withBackgroundColor:self.textBackgroundColor];
+            [cell setTitle:mediaObject.title];
+            
+            [cell setImageWithURL:mediaObject.object];
+        }
+            break;
         case SAScrollMediaTypeOther:
             NSAssert(nil, @"not complete yet..., best to use for subclass");
 

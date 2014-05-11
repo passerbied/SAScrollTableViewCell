@@ -3,6 +3,7 @@
 //  SAScrollTableViewCell
 //
 //  Created by globalreach-dev on 03/05/2014.
+//  Modified for ZBCool app by Passerbied on 11/05/2014.
 //  Copyright (c) 2014 SA. All rights reserved.
 //
 
@@ -52,6 +53,9 @@
             break;
         case SAScrollMediaTypeVideoAsset:
             type = @"video url";
+            break;
+        case SAScrollMediaTypeImageURL:
+            type = @"image url";
             break;
         case SAScrollMediaTypeOther:
             if (self.mediaClass) {
